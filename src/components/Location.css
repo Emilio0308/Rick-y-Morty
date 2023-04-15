@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     width: 100%;
 }
 .locationInfo{
@@ -25,10 +25,25 @@
     text-align: center;
 }
 .ListResidents{
-    gap: 14px;
+    gap: 20px;
     display: grid;
     grid-auto-rows: auto;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     width: 100%;
 }
+.pagesContainer{
+    display: flex;
+    gap: 15px;
+}
+.pagesContainer > button {
+    padding: 18px 15px;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.9;
+    font-size: 1.8rem;
+}
+.pagesContainer > button:hover{
+    color: white;
+}
+

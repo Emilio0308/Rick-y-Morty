@@ -3,6 +3,7 @@ import CardInfo from './CardInfo'
 import "./Location.css"
 
 const Location = ( { location }) => {
+    // console.log(location)
     const [currentPage, setCurrentPage] = useState(1)
     const residents = location?.residents
     const RESIDENTSXPAGE = 20
@@ -20,8 +21,8 @@ const Location = ( { location }) => {
     <section className='location'>
         <div className='locationInfo'>
             <h3 className='locationTitle'>Welcome to the crazy universe</h3>
-            <p className='dimension'>{location?.dimension}</p>
-            <p className='dimensionName'>{location?.name}</p>
+            <p className='dimension'><span>Dimension: </span>{location?.dimension}</p>
+            <p className='dimensionName'><span>Planet: </span>{location?.name}</p>
             <p className='dimensionResident'><span>Population: </span>{location?.residents.length}</p>
         </div>
         <section className='ListResidents'>
@@ -31,10 +32,10 @@ const Location = ( { location }) => {
                 })
             }
         </section>
-        <div>
+        <div className='pagesContainer'>
             {
                 pages.map( (page) =>{
-                   return <button onClick={() => { setCurrentPage(page) }} key={page}>{page}</button>
+                   return <button style={ currentPage == page ? {background: `rgb(99, 99, 99)`}: {background: `rgb(197, 195, 195)`}} onClick={() => { setCurrentPage(page) }} key={page}>{page}</button>
                 })
             }
         </div>

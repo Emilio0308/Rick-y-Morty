@@ -3,6 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+header{
+  width: 100%;
+}
+header > iframe{
+  width: 100%;
 }
 main{
   display: flex;
@@ -17,4 +24,13 @@ main{
 .searh{
   width: 100%;
   text-align: center;
+  display: flex;
+  gap: 20px;
+}
+.inputDimension{
+  width: 80%;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 2px solid black;
 }

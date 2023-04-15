@@ -4,11 +4,17 @@ import "./CardInfo.css"
 
 const CardInfo = ( { residentUrl }) => {
     const { db : residentInfo } = AxiosHook(residentUrl)
+    let residenStatus = {
+        "Alive" : "rgb(90, 248, 42)",
+        "Dead": "rgb(252, 31, 31)",
+        "unknown": "rgb(83, 83, 83)",
+    }
   return (
     <article className='residentCard'>
         <div className='residenImg'>
-            <img src= { residentInfo?.image } alt="Character img" />
+            <img src= { residentInfo?.image } alt="Character img" download="lazy" />
             <button className='residenStatus'>
+                <div style={{background: residenStatus[residentInfo?.status]}}></div>
             { residentInfo?.status}
             </button>
         </div>

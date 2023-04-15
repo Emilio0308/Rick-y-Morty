@@ -1,6 +1,6 @@
 
 const ramdonDImension = () => {
-    let ramdonDImension = Math.floor((Math.random()*26)+1)
+    let ramdonDImension = Math.floor((Math.random()*126)+1)
   return ramdonDImension
 }
 

@@ -1,7 +1,10 @@
 .residentCard{
     color: rgb(184, 182, 182);
-    background: black;
+    background: rgba(0, 0, 0, 0.92);
     width: 100%;
+}
+.residentCard:hover{
+    transform: scale(1.1);
 }
 .residentInfo{
     padding: 10px;
@@ -13,11 +16,23 @@
     width: 100%;
 }
 .residenStatus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     position: absolute;
     width: 40%;
     height: 25px;
     left: 50%;
     bottom: 10px;
     transform: translateX(-50%);
+    border: none;
+    background: rgb(199, 199, 199) ;
+}
+.residenStatus > div{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
 }
 
