@@ -4,7 +4,6 @@ import "./CardInfo.css"
 
 const CardInfo = ( { residentUrl }) => {
     const { db : residentInfo } = AxiosHook(residentUrl)
-    console.log( residentInfo)
   return (
     <article className='residentCard'>
         <div className='residenImg'>
