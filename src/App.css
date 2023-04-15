@@ -1,0 +1,20 @@
+.App{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1024px;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.searh{
+  width: 100%;
+  text-align: center;
+}
