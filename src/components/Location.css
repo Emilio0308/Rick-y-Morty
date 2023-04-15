@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
 .locationInfo{
     width: 100%;
@@ -12,7 +13,6 @@
     grid-template-columns: repeat(2, 1fr);
     background: rgba(0, 0, 0, 0.664);
     color: rgb(184, 182, 182);
-    max-width: 340px;
 }
 .locationTitle{
     grid-column: span 2;
@@ -25,14 +25,10 @@
     text-align: center;
 }
 .ListResidents{
-    display: flex;
     gap: 14px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-@media screen and (min-width: 600px){
-    .locationInfo{
-        max-width: unset;
-    }
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    width: 100%;
 }

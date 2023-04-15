@@ -2,7 +2,6 @@
     color: rgb(184, 182, 182);
     background: black;
     width: 100%;
-    max-width: 340px;
 }
 .residentInfo{
     padding: 10px;
@@ -22,9 +21,3 @@
     transform: translateX(-50%);
 }
 
-@media screen and (min-width: 600px){
-    .residentCard{
-        max-width: 240px;
-        height: 360px;
-    }
-}
