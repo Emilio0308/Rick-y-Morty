@@ -34,3 +34,37 @@ main{
   background: none;
   border-bottom: 2px solid black;
 }
+.searh > button {
+  border: none;
+  padding: 8px;
+  background: rgb(0, 0, 0);
+  color: rgb(230, 230, 230);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.load{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  animation: load 0.5s linear infinite;
+  border-right: 15px solid rgb(49, 49, 49);
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+  position: relative;
+}
+.load > div{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate( -50% , -50%);
+}
+@keyframes load {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

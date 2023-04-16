@@ -3,15 +3,17 @@ import "./App.css";
 import Location from "./components/Location";
 import ramdonDImension from "./helpers/ramdonDImension";
 import AxiosHook from "./hooks/AxiosHook";
-import axios from "axios";
+
 
 function App() {
   const [currentValue, setCurrentValue] = useState("");
   const [dimen, setdimen] = useState();
+  const [load, setLoad] = useState(true)
   let url = `https://rickandmortyapi.com/api/location/${ramdonDImension()}`;
-  const { db: location } = AxiosHook(url);
+  const { db: location , loading , reFetch} = AxiosHook(url);
   useEffect(() => {
     location ? setdimen(location) : null;
+    loading ? null : setLoad(false)
   }, [location]);
 
   const handleChangeInput = (e) => {
@@ -19,13 +21,9 @@ function App() {
   };
   const ChangeDimen = (e) => {
     e.preventDefault();
+    if (currentValue){
     url = `https://rickandmortyapi.com/api/location/${currentValue}`;
-    axios
-      .get(url)
-      .then((res) => {
-        setdimen(res.data);
-      })
-      .catch((err) => console.log(err));
+    reFetch(url)}
   };
   return (
     <div className="App">
@@ -34,7 +32,9 @@ function App() {
           <input className="inputDimension" placeholder="Search a dimension" type="text" onChange={handleChangeInput} value={currentValue}/>
           <button onClick={ChangeDimen}>search</button>
         </form>
-        <Location location={dimen} />
+        {
+          load ? <div className="load"></div> : <Location location={dimen} />
+        }
       </main>
     </div>
   );
