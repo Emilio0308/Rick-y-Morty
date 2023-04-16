@@ -4,7 +4,7 @@ import "./Location.css"
 
 const Location = ( { location }) => {
     // console.log(`render`)
-    console.log(location)
+    // console.log(location)
     const [currentPage, setCurrentPage] = useState(1)
     const residents = location?.residents
     const RESIDENTSXPAGE = 20

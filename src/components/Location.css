@@ -8,7 +8,9 @@
 }
 .locationInfo{
     width: 100%;
+    padding: 15px 0;
     display: grid;
+    gap: 10px;
     grid-template-rows: repeat( 3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     background: rgba(0, 0, 0, 0.664);
@@ -17,6 +19,8 @@
 .locationTitle{
     grid-column: span 2;
     text-align: center;
+    color: #8EFF8B;
+    font-size: 1.5rem;
 }
 .dimension{
     grid-column: span 2;
@@ -37,11 +41,11 @@
     gap: 15px;
 }
 .pagesContainer > button {
-    padding: 18px 15px;
+    padding: 10px 10px;
     border: none;
     border-radius: 50%;
     opacity: 0.9;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 .pagesContainer > button:hover{
     color: white;

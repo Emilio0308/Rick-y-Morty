@@ -8,8 +8,15 @@
 header{
   width: 100%;
 }
-header > iframe{
+.titleContainer{
   width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.titleContainer > img{
+  max-width: 100%;
 }
 main{
   display: flex;
@@ -19,28 +26,43 @@ main{
   max-width: 1024px;
   width: 100%;
   padding: 10px;
-  gap: 10px;
+  gap: 20px;
 }
 .searh{
   width: 100%;
   text-align: center;
-  display: flex;
   gap: 20px;
+  backdrop-filter: blur(3px);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 .inputDimension{
-  width: 80%;
   border: none;
   outline: none;
   background: none;
-  border-bottom: 2px solid black;
+  width: 100%;
+  padding: 12px 15px;
+  color: rgb(230, 230, 230);
+  box-shadow:  -5px 5px 10px 1px rgb(87, 87, 87);
+}
+.inputDimension::placeholder{
+  color: rgb(230, 230, 230);
 }
 .searh > button {
+  max-width: 90px;
+  margin: auto;
   border: none;
   padding: 8px;
   background: rgb(0, 0, 0);
-  color: rgb(230, 230, 230);
+  color: rgb(184, 182, 182);
   border-radius: 5px;
   cursor: pointer;
+}
+.searh > span {
+  padding: 15px 2px;
+  text-align: center;
+  color: rgb(230, 230, 230);
 }
 
 .load{
@@ -53,12 +75,6 @@ main{
   border-bottom: 15px solid transparent;
   border-top: 15px solid transparent;
   position: relative;
-}
-.load > div{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate( -50% , -50%);
 }
 @keyframes load {
   0%{

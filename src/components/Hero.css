@@ -1,0 +1,31 @@
+.sinopsis{
+    display: grid;
+    grid-template-rows: 40px 1fr 3fr;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.imgContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sinopsisImg{
+    max-width: 380px;
+    width: 100%;
+}
+
+@media (min-width: 540px){
+    .sinopsis{
+        grid-template-columns: 3fr 5fr;
+        grid-template-rows: 40px 5fr;
+    }
+    .sinopsisText{
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .imgContainer{
+        grid-column-start: 2;
+        grid-row: span 2;
+    }
+}
