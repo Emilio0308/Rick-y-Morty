@@ -41,12 +41,6 @@ function App() {
         <form className="searh">
           <span>Dimension N°: </span><input
             className="inputDimension" placeholder="Search a dimension" type="text" onChange={handleChangeInput} value={currentValue}/>
-          {/* <div>
-            <ul>
-              <li>tierra</li>
-              <li>marte</li>
-            </ul>
-          </div> */}
           <button onClick={ChangeDimen}>search</button>
         </form>
         {load ? <div className="load"></div> : <Location location={dimen} />}

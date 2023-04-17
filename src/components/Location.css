@@ -51,7 +51,7 @@
     color: white;
 }
 .noResidents{
-    background-image: url(./bg/bg2.png);
+    background-image: url(/bg/bg2.png);
     background-position: center;
     background-size: cover;
     width: 100%;
