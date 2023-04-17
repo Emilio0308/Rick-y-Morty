@@ -1,0 +1,60 @@
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.imgCard{
+    position: relative;
+    width: 300px;
+    height: 250px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+}
+.normalImg{
+    object-fit: cover;
+    width: 240px;
+    height: 100%;
+}
+.img3d{
+    position: absolute;
+    translate: 0 -1%;
+    transition: .3s ease;
+    opacity: 0;
+    z-index: 10;
+    height: 100%;
+    object-fit: cover;
+}
+.rickCard .img3d{
+    width: 220px;
+    height: 100%;
+}
+.imgCard::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 10% , rgba(0, 0, 0, 0.5) 50% , rgb(0, 0, 0) 95%);
+    opacity: 0;
+    transition: 0.1s ease;
+    z-index: 15;
+}
+.imgCard:hover .normalImg {
+    transform: perspective(250px)
+                rotateX(10deg)
+                translateY(-5%);
+}
+
+.imgCard:hover .img3d{
+    opacity: 1;
+    transform: scale(1.2);
+    translate: 0 -30%;
+}
+
+.imgCard:hover::before{
+    opacity: 1;
+}

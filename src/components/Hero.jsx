@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Hero.css"
+import CharacterCard from './CharacterCard'
 
 const Hero = () => {
 
@@ -12,6 +13,14 @@ const Hero = () => {
             <div className='imgContainer'>
                 <img className='sinopsisImg' src="./rickmorty.png" alt="" />
             </div>
+        </article>
+        <article className='characterContainer'>
+          <h3 className='characterContainerTitle'>Main characters of the series:</h3>
+          <div>
+            <CharacterCard img={"./characters/normalrick.jpeg"} hoverimg={"./characters/rick3d.png"}/>
+            <CharacterCard img={"./characters/normalmorty.jpeg"} hoverimg={"./characters/morty3d.png"}/>
+            <CharacterCard img={"./characters/normalsummer.jpeg"} hoverimg={"./characters/summer3d.png"}/>
+          </div>
         </article>
     </section>
   )

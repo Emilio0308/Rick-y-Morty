@@ -1,9 +1,12 @@
 .sinopsis{
     display: grid;
-    grid-template-rows: 40px 1fr 3fr;
+    grid-template-rows: 40px 1fr auto;
     color: white;
     justify-content: center;
     align-items: center;
+    justify-items: center;
+    background: black;
+    padding: 15px 0;
 }
 .imgContainer{
     width: 100%;
@@ -14,10 +17,17 @@
     max-width: 380px;
     width: 100%;
 }
-
+.sinopsisTitle{
+    width: 100%;
+    text-align: center;
+}
+.sinopsisText{
+    width: 100%;
+    padding: 15px;
+}
 @media (min-width: 540px){
     .sinopsis{
-        grid-template-columns: 3fr 5fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 40px 5fr;
     }
     .sinopsisText{
@@ -28,4 +38,16 @@
         grid-column-start: 2;
         grid-row: span 2;
     }
+}
+.characterContainer{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+.characterContainer > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
