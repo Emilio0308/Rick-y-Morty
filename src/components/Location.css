@@ -50,4 +50,29 @@
 .pagesContainer > button:hover{
     color: white;
 }
+.noResidents{
+    background-image: url(./bg/bg2.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    color: rgb(184, 182, 182);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerMesh{
+    background: rgba(44, 44, 44, 0.826);
+    width: 70%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.containerMesh h3 > span{
+    color: rgb(255, 0, 0);
+    font-size: 1.5rem;
+}
 

@@ -5,8 +5,8 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
-    background: black;
     padding: 15px 0;
+    border-bottom: 2px solid #8EFF8B;
 }
 .imgContainer{
     width: 100%;
@@ -24,6 +24,7 @@
 .sinopsisText{
     width: 100%;
     padding: 15px;
+    text-align: justify;
 }
 @media (min-width: 540px){
     .sinopsis{
@@ -45,9 +46,13 @@
     flex-direction: column;
     width: 100%;
     gap: 30px;
+    align-items: center;
+    border-bottom: 2px solid #8EFF8B;
+    padding: 25px 0;
 }
 .characterContainer > div{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 15px;
+    justify-content: space-around;
 }

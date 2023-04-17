@@ -2,7 +2,7 @@
     color: rgb(184, 182, 182);
     background: rgba(0, 0, 0, 0.92);
     width: 100%;
-    border: 2px solid #8EFF8B;;
+    border: 2px solid #8EFF8B;
 }
 .residentCard:hover{
     transform: scale(1.1);
