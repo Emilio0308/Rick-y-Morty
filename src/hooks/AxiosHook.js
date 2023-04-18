@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 const AxiosHook = (url) => {
     const [db, setDb] = useState()
     const [loading, setLoading] = useState(true)
-    const [err, setErr] = useState()
+    const [err, setErr] = useState(null)
 
     useEffect(() => {
         setLoading(true)
@@ -17,7 +17,7 @@ const AxiosHook = (url) => {
     const reFetch = (url) =>{
         axios.get(url)
         .then( (res) => setDb(res.data))
-        .catch( (err) => console.log( err))
+        .catch( (err) => setErr( err))
         .finally( setLoading(false))
     }
     return { db , loading ,err, reFetch}

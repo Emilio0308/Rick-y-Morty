@@ -10,8 +10,8 @@ const GetAllLocation = () => {
         .get(url)
         .then((res) => {
             let temp = res.data.results.map( (element) =>{
-                let id =element.id
-                let name=element.name.toLowerCase()
+                let id = element.id
+                let name = `${element.name}- Dimension${element.id}`
                 return{
                     id,
                     name
