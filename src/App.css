@@ -37,13 +37,14 @@ main{
   backdrop-filter: blur(3px);
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  position: relative;
+  z-index: 100;
 }
 .inputDimension{
   border: none;
   outline: none;
   background: none;
-  width: 100%;
   padding: 12px 15px;
   color: rgb(230, 230, 230);
   box-shadow:  -5px 5px 10px 1px rgb(87, 87, 87);
@@ -61,7 +62,7 @@ main{
   border-radius: 5px;
   cursor: pointer;
 }
-.searh > span {
+.searh > label {
   padding: 15px 2px;
   text-align: center;
   color: rgb(230, 230, 230);
@@ -86,8 +87,36 @@ main{
     transform: rotate(360deg);
   }
 }
+.listInputContainer{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: rgb(37, 37, 37);
+  grid-row-start: 3;
+  width: 100%;
+  transform: translateY(-20px);
+  overflow-y: auto;
+  max-height: 400px;
+}
+.listInput{
+  cursor: pointer;
+  color: rgb(243, 243, 243);
+  background: rgb(37, 37, 37);
+  border-bottom: 3px solid black;
+  padding: 5px;
+}
+.listInput:hover{
+  background: rgb(61, 61, 61);
+}
+
 @media (min-width: 540px){
   .searh{
     grid-template-columns: 1fr 70% 1fr;
+  }
+  .listInputContainer{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    transform: translateY(0px);
   }
 }

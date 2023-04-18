@@ -4,18 +4,27 @@ import Location from "./components/Location";
 import ramdonDImension from "./helpers/ramdonDImension";
 import AxiosHook from "./hooks/AxiosHook";
 import Hero from "./components/Hero";
+import axios from "axios";
+import GetAllLocation from "./helpers/GetAllLocation";
 
 function App() {
   const [currentValue, setCurrentValue] = useState("");
   const [dimen, setdimen] = useState();
   const [load, setLoad] = useState(true);
+  const [newData, setNewData] = useState([])
   let url = `https://rickandmortyapi.com/api/location/${ramdonDImension()}`;
   const { db: location, loading, reFetch } = AxiosHook(url);
 
+
+  let {data } = GetAllLocation()
+
+  
   const handleChangeInput = (e) => {
-    e.target.value <= 126
-      ? setCurrentValue(e.target.value)
-      : alert("The number of known dimensions is 126.");
+    // e.target.value <= 126
+       setCurrentValue(e.target.value)
+      // : alert("The number of known dimensions is 126.");
+      dataFilter(e.target.value)
+
   };
   const ChangeDimen = (e) => {
     e.preventDefault();
@@ -27,8 +36,22 @@ function App() {
   useEffect(() => {
     location ? setdimen(location) : null;
     loading ? null : setLoad(false);
-    console.log(`render`);
   }, [location]);
+
+
+  const dataFilter =(value)=>{
+    if(!value)setNewData([])
+    else{
+    setNewData(data.filter( (dimension) => {
+      return dimension.name.includes(value)
+    }))
+    }
+  }
+  const handleInsertInput = (id)=>{
+    setCurrentValue(id)
+    setNewData([])
+  }
+
   return (
     <div className="App">
       <header>
@@ -39,8 +62,15 @@ function App() {
       <main>
         <Hero/>
         <form className="searh">
-          <span>Dimension N°: </span><input
-            className="inputDimension" placeholder="Search a dimension" type="text" onChange={handleChangeInput} value={currentValue}/>
+          <label htmlFor="inputDimension">Dimension N°: </label>
+          <input id="inputDimension" className="inputDimension" placeholder="Search a dimension" type="text" onChange={handleChangeInput} value={currentValue}/>
+          <div className="listInputContainer">
+            {
+              newData?.map((d)=>{
+                return <button className="listInput" key={d.id} onClick={()=> handleInsertInput(d.id)}>{d.name}</button>
+              })
+            }
+          </div>
           <button onClick={ChangeDimen}>search</button>
         </form>
         {load ? <div className="load"></div> : <Location location={dimen} />}

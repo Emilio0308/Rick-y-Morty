@@ -15,6 +15,7 @@
 }
 .residenImg > img{
     width: 100%;
+    z-index: 0;
 }
 .residenStatus{
     display: flex;
@@ -28,12 +29,14 @@
     bottom: 10px;
     transform: translateX(-50%);
     border: none;
-    background: rgb(199, 199, 199) ;
+    background: rgb(199, 199, 199);
+    z-index: 0;
 }
 .residenStatus > div{
     width: 15px;
     height: 15px;
     border-radius: 50%;
     border: none;
+    z-index: 0;
 }
 
