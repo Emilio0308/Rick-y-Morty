@@ -20,7 +20,7 @@ function App() {
 
   
   const handleChangeInput = (e) => {
-      setCurrentValue(e.target.value)
+      setCurrentValue(e.target.value.toLowerCase())
       dataFilter(e.target.value)
 
   };
@@ -48,7 +48,7 @@ function App() {
     if(!value)setNewData([])
     else{
     setNewData(data.filter( (dimension) => {
-      return dimension.name.toLowerCase().includes(value)
+      return dimension.name.toLowerCase().includes(value.toLowerCase())
     }))
     }
   }
