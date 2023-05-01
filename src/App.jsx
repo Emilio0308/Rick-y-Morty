@@ -53,8 +53,10 @@ function App() {
     }
   }
   const handleInsertInput = (id)=>{
-    setCurrentValue(id)
-    setNewData([])
+    const url = `https://rickandmortyapi.com/api/location/${id}`;
+      reFetch(url);
+      setCurrentValue("")
+      setNewData([])
   }
 
   const formRef = useRef(null)

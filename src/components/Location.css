@@ -39,16 +39,20 @@
 .pagesContainer{
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 .pagesContainer > button {
-    padding: 10px 10px;
+    height: 25px;
+    aspect-ratio: 1/1;
     border: none;
     border-radius: 50%;
     opacity: 0.9;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
 }
 .pagesContainer > button:hover{
-    color: white;
+    color: rgb(255, 0, 0);
 }
 .noResidents{
     background-image: url(/bg/bg2.png);
